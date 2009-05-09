@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  	<title>softprops/bird-speak @ GitHub</title>
+  	<style type="text/css">
+  		body { background: #5E595B; color: #ACA4A7; font: 28px "garamond", "arial";}
+      #container { margin: 0 auto;width: 700px;}
+  		h1 { font-size: 3.8em; color: #f5f5f5; margin-bottom: 3px; }
+  		h1 .small { font-size: 0.4em; }
+  		h1 a { text-decoration: none }
+  		h2 { font-size: 1.5em; color: #f5f5f5; }
+      h3 { color: #f5f5f5; }
+      a:link, a:visited { color: #f5f5f5; }
+      a:hover { color:#CAE4F5; }
+      hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+      .footer { text-align:center; padding-top:10px; font-style: italic; }
+      .jp { font: 1.8em Bitstream Vera Sans Mono; margin-top:-10px;}
+      .bm { font-weight:bold; }
+  	</style>
+  </head>
+  <body>
+    <a href="http://github.com/softprops/bird-speak">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
+    </a>
+    <div id="container">
+      <h1>
+        <a href="http://github.com/softprops/bird-speak">bird speak</a>
+      </h1>
+      <h1 class="jp">(鳥話す)</h1>
+      <p>A <a href="http://www.twitter.com">twitter.com</a> tweet translator.</p>
+
+      <h2 id="usage">Usage</h2>
+
+  <p>Visit your twitter homepage or a profile. When you get tweets you can&#8217;t read, click the bird speak <a class="bm" href='javascript:    (function(){try{var isTwitter=window.location.host.match(/(twitter.com)?/);if(isTwitter){var d=window.document;if(typeof google=="undefined"){var s=d.createElement("script");s.type="text/javascript";s.src="http://www.google.com/jsapi";d.getElementsByTagName("head")[0].appendChild(s);}
+      var elClass=".entry-content";var msg="tweet tweet";function resolveLang(){return jQuery("html").attr("lang");}
+      var lang=resolveLang();if(typeof jQuery=="undefined"){google.load("jquery","1.3.2");}
+      jQuery.fn.extend({linkUrl:function(){var returning=[];var regexp=/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi;this.each(function(){returning.push(this.replace(regexp,"<a rel=\"nofollow\" target=\"blank\" href=\"$1\">$1</a>"));});return jQuery(returning);},linkUser:function(){var returning=[];var regexp=/[\@]+([A-Za-z0-9-_]+)/gi;this.each(function(){returning.push(this.replace(regexp,"@<a href=\"http://twitter.com/$1\">$1</a>"));});return jQuery(returning);}});function flash(txt){var id="t-flash";var el=d.createElement("div");el.style.position="fixed";el.style.height="30";el.style.width="250";el.style.border="3px solid #f5f5f5";el.style.margin="0 auto";el.id=id;el.style.top="0";el.style.left="40%";el.style.padding="5px 10px 5px 10px";el.style.backgroundColor="#8ADCFF";el.innerHTML=txt;var b=d.getElementsByTagName("body")[0];b.appendChild(el);jQuery("#"+id).fadeIn(2000,function(){setTimeout(function(){jQuery("#"+id).fadeOut(1000,function(){jQuery(this).remove();});},2000);});}
+      function decorate(txt){return jQuery([txt]).linkUrl().linkUser()[0];}
+      function translate(){jQuery(elClass).each(function(index,el){var jel=jQuery(el);google.language.translate(jel.text(),"",lang,function(result){if(!result.error){jel.html(decorate(result.translation));}});});google.language.translate(msg,"en",lang,function(result){flash(result.translation);});}
+      function loadLang(){clearInterval(gInterval);google.load("language","1",{callback:translate});}
+      var gInterval=setTimeout(loadLang,350);}}catch(e){alert(e);}})();'>bookmarklet</a>.</p>
+
+  <h2>Install</h2>
+  <ol><li>Drag <a href='javascript:(function(){try{var isTwitter=window.location.host.match(/(twitter.com)?/);if(isTwitter){var d=window.document;if(typeof google=="undefined"){var s=d.createElement("script");s.type="text/javascript";s.src="http://www.google.com/jsapi";d.getElementsByTagName("head")[0].appendChild(s);}
+  var elClass=".entry-content";var msg="tweet tweet";function resolveLang(){return jQuery("html").attr("lang");}
+  var lang=resolveLang();if(typeof jQuery=="undefined"){google.load("jquery","1.3.2");}
+  jQuery.fn.extend({linkUrl:function(){var returning=[];var regexp=/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi;this.each(function(){returning.push(this.replace(regexp,"<a rel=\"nofollow\" target=\"blank\" href=\"$1\">$1</a>"));});return jQuery(returning);},linkUser:function(){var returning=[];var regexp=/[\@]+([A-Za-z0-9-_]+)/gi;this.each(function(){returning.push(this.replace(regexp,"@<a href=\"http://twitter.com/$1\">$1</a>"));});return jQuery(returning);}});function flash(txt){var id="t-flash";var el=d.createElement("div");el.style.position="fixed";el.style.height="30";el.style.width="250";el.style.border="3px solid #f5f5f5";el.style.margin="0 auto";el.id=id;el.style.top="0";el.style.left="40%";el.style.padding="5px 10px 5px 10px";el.style.backgroundColor="#8ADCFF";el.innerHTML=txt;var b=d.getElementsByTagName("body")[0];b.appendChild(el);jQuery("#"+id).fadeIn(2000,function(){setTimeout(function(){jQuery("#"+id).fadeOut(1000,function(){jQuery(this).remove();});},2000);});}
+  function decorate(txt){return jQuery([txt]).linkUrl().linkUser()[0];}
+  function translate(){jQuery(elClass).each(function(index,el){var jel=jQuery(el);google.language.translate(jel.text(),"",lang,function(result){if(!result.error){jel.html(decorate(result.translation));}});});google.language.translate(msg,"en",lang,function(result){flash(result.translation);});}
+  function loadLang(){clearInterval(gInterval);google.load("language","1",{callback:translate});}
+  var gInterval=setTimeout(loadLang,350);}}catch(e){alert(e);}})();'>bird    speak</a> into your bookmark bar</li><li> You're done.</li></ol>
+      <hr/>
+      <div class="footer">
+        git @ <a href="http://github.com/softprops/bird-speak">softprops/bird-speak</a>
+      </div>
+    </div>
+  </body>
+</html>
