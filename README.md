@@ -12,7 +12,7 @@ to your language.
 
 The language tweets get translated to is based on the html attribute "lang" in the current document. This is set in your Settings/Account/Language preference. English and Japanese are currenty the only languages that are available.
 
-You can find a link to the bookmarklet [here](http://bird-speak.github.com/softprops) 
+You can find a link to the bookmarklet [here](http://softprops.github.com/bird-speak) 
 
 ## TODO
  * make a bit more generic
