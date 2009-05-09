@@ -11,13 +11,9 @@
 				d.getElementsByTagName("head")[0].appendChild(s);
 			}
 			
-			if(typeof jQuery=="undefined") { 
-				google.load("jquery", "1.3.2"); 
-			}
-			
 			var elClass= ".entry-content";
 			
-			var msg = "tweet tweet  さえずる";
+			var msg = "tweet tweet";
 			
 			function resolveLang() {
 				return jQuery("html").attr("lang");
@@ -25,12 +21,16 @@
 			
 			var lang = resolveLang();
 			
+			if(typeof jQuery=="undefined") { 
+					google.load("jquery", "1.3.2"); 
+	  	}
+			
 			jQuery.fn.extend({
 	      linkUrl: function() {
 	        var returning = [];
 	        var regexp = /((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi;
 	        this.each(function() {
-	          returning.push(this.replace(regexp,"<a href=\"$1\">$1</a>"));
+	          returning.push(this.replace(regexp,"<a rel=\"nofollow\" target=\"blank\" href=\"$1\">$1</a>"));
 	        });
 	        return jQuery(returning);
 	      },
@@ -44,20 +44,20 @@
 	      }
 	    });
 	
-			function flash() {
+			function flash(txt) {
 				var id="t-flash";
 				var el=d.createElement("div");
-				  el.style.position="fixed";
-				  el.style.height="30";
-				  el.style.width="250";
-				 	el.style.border="3px solid #f5f5f5";
-				  el.style.margin="0 auto";
-				  el.id=id;
-				  el.style.top="0";
-				  el.style.left="40%";
-				  el.style.padding="5px 10px 5px 10px";
-				  el.style.backgroundColor="#8ADCFF";
-				  el.innerHTML=msg;
+			  el.style.position="fixed";
+			  el.style.height="30";
+			  el.style.width="250";
+			 	el.style.border="3px solid #f5f5f5";
+			  el.style.margin="0 auto";
+			  el.id=id;
+			  el.style.top="0";
+			  el.style.left="40%";
+			  el.style.padding="5px 10px 5px 10px";
+			  el.style.backgroundColor="#8ADCFF";
+			  el.innerHTML=txt;
 				var b=d.getElementsByTagName("body")[0];
 				b.appendChild(el);
 			  jQuery("#"+id).fadeIn(2000,function() {
@@ -82,14 +82,18 @@
 					  }
 					});
 				});
-				flash();
+				google.language.translate(msg,"en",lang,function(result){
+					flash(result.translation);
+				});
 		  }
 		
 			function loadLang() {
+				clearInterval(gInterval);
+				
 				google.load("language","1", { callback:translate });
 			}
-			
-	    var interval = setTimeout(loadLang,300);
+			 
+			var gInterval = setTimeout(loadLang,350);
 		}
 	} catch(e) {
 		alert(e);
